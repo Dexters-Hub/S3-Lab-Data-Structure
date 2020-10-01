@@ -8,20 +8,20 @@ struct poly
 };
 
 //declaration of polynomials
-struct poly a[50], b[50], c[50], d[50];
+struct poly a[50], b[50], c[50];
 
 int main()
 {
   int i;
-  int deg1, deg2; //stores degrees of the polynomial
+  int deg1, deg2; 
   int k = 0, l = 0, m = 0;
-  printf("Enter the highest degree of poly1:");
+  
+  printf("Enter the Degree of the 1st polynomial:");
   scanf("%d", &deg1);
 
-  //taking polynomial terms from the user
-  for (i = 0; i <= deg1; i++)
+  // Reading Coefficients from User Input of 1st Polynomial
+    for (i = 0; i <= deg1; i++)
   {
-    //entering values in coefficient of the polynomial terms
     printf("\nEnter the coeff of x^%d :", i);
     scanf("%f", &a[i].coeff);
 
@@ -29,8 +29,8 @@ int main()
     a[k++].exp = i;
   }
 
-  //taking second polynomial from the user
-  printf("\nEnter the highest degree of poly2:");
+  // Reading Coefficients from User Input of 2nd Polynomial
+  printf("\nEnter the Degree of 2nd polynomial:");
   scanf("%d", &deg2);
 
   for (i = 0; i <= deg2; i++)
@@ -40,21 +40,21 @@ int main()
     b[l++].exp = i;
   }
 
-  //printing first polynomial
+  //Printing the First Polynomial
   printf("\nExpression 1 = %.1f", a[0].coeff);
   for (i = 1; i <= deg1; i++)
   {
     printf("+ %.1fx^%d", a[i].coeff, a[i].exp);
   }
 
-  //printing second polynomial
+  //Printing the Second Polynomial
   printf("\nExpression 2 = %.1f", b[0].coeff);
   for (i = 1; i <= deg2; i++)
   {
     printf("+ %.1fx^%d", b[i].coeff, b[i].exp);
   }
 
-  //Adding the polynomials
+  // Adding the Polynomials
   if (deg1 > deg2)
   {
     for (i = 0; i <= deg2; i++)
@@ -88,8 +88,8 @@ int main()
     }
   }
 
-  //printing the sum of the two polynomials
-  printf("\nExpression after additon  = %.1f", c[0].coeff);
+  //Printing the Sum of the polynomials
+  printf("\nExpression after addition  = %.1f", c[0].coeff);
   for (i = 1; i < m; i++)
   {
     printf("+ %.1fx^%d", c[i].coeff, c[i].exp);
